@@ -1,0 +1,369 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.iconBtn {
+  display: flex;
+  font-family: Whitney, "Open Sans", Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 11pt;
+  border-radius: 1px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  outline: transparent !important;
+  background-color: transparent;
+  padding: 10px;
+}
+
+.iconBtn .icon {
+  width: 30px;
+  height: 30px;
+}
+
+.iconBtn .icon2 {
+  width: 23px;
+  height: 23px;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  display: flex;
+  font-family: Whitney, "Open Sans", Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 11pt;
+  border-radius: 3px;
+  height: 40px;
+  width: 70px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  align-items: center;
+  float: right;
+  background-color: #4cbd52;
+  border: 2px solid #4cbd52;
+  color: #fff;
+  outline: transparent !important;
+  margin: 5px;
+}
+
+input[type=submit]:hover {
+  background-color: #4cbd52;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+.button {
+  display: flex;
+  font-family: Whitney, "Open Sans", Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 11pt;
+  border-radius: 3px;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  align-items: center;
+  background-color: #7289da;
+  border: 2px solid #7289da;
+  color: #fff;
+  outline: transparent !important;
+  margin: 5px;
+}
+
+.size-1 {
+  height: 35px;
+  width: 120px;
+}
+
+.size1 {
+  height: 45px;
+  width: 250px;
+}
+
+.size2 {
+  height: 50px;
+  width: 50px;
+}
+
+.size3 {
+  height: 20px;
+  width: 50px;
+}
+
+.button .icon {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.white {
+  background-color: rgb(223, 223, 223);
+  border: 2px solid rgb(223, 223, 223);
+  color: #17161A;
+}
+
+.success {
+  background-color: #4cbd52;
+  border: 2px solid #4cbd52;
+}
+
+.danger {
+  background-color: #c72b2b;
+  border: 2px solid #c72b2b;
+}
+
+.alert {
+  background-color: #d5d838;
+  border: 2px solid #d5d838;
+}
+
+.disabled {
+  background-color: #4a4d59;
+  border: 2px solid #4a4d59;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+
+.button:hover {
+  transform: translateY(1px);
+}
+
+.button:active {
+  transform: translateY(2px);
+}
+
+.iconBtn:hover {
+  transform: translateY(1px);
+}
+
+.iconBtn:active {
+  transform: translateY(2px);
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: #7f7fd5;
+  background: linear-gradient(to right, #b0b9b9, #cacaca, #d4d4d4);
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin-block: 2rem;
+  gap: 2rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: clamp(20rem, calc(20rem + 2vw), 22rem);
+  overflow: hidden;
+  box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 1em;
+  background: #ECE9E6;
+background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+
+}
+
+.card__body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+
+.tag {
+  align-self: flex-start;
+  padding: .25em .75em;
+  border-radius: 1em;
+  font-size: .75rem;
+}
+
+.tag + .tag {
+  margin-left: .5em;
+}
+
+.tag-blue {
+  background: #56CCF2;
+background: linear-gradient(to bottom, #2F80ED, #56CCF2);
+  color: #fafafa;
+}
+
+.tag-brown {
+  background: #D1913C;
+background: linear-gradient(to bottom, #FFD194, #D1913C);
+  color: #fafafa;
+}
+
+.tag-red {
+  background: #cb2d3e;
+background: linear-gradient(to bottom, #ef473a, #cb2d3e);
+  color: #fafafa;
+}
+
+.card__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+.card__body h4 {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.title {
+  font-size: 50px;
+  line-height: 50px;
+  margin-bottom: 10px;
+  color: #17161A;
+}
+
+.subtitle {
+  font-size: 26px;
+  margin-bottom: 40px;
+}
+
+a {
+  color: #5b499e;
+  text-decoration: none;
+}
+
+.card__footer {
+  display: flex;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+.user {
+  display: flex;
+  gap: .5rem;
+}
+
+.user__image {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.user__info > small {
+  color: #666;
+}
+
+.wrap{
+  word-wrap: break-word;
+}
+
+.alertBox {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.successBox {
+  padding: 20px;
+  background-color: #4cbd52;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+#main {
+  position: inherit;
+}

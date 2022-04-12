@@ -1,0 +1,26 @@
+<div class="header">
+    @if(user)
+    <a href="/me">
+        <div class="iconBtn">
+            <img src="{{ user.avatarUrl }}" class="icon" />
+        </div>
+    </a>
+    @end
+    <a href="/posts">
+        <div class="iconBtn">
+            <img src="https://i.imgur.com/lWsDhWe.png" class="icon" />
+        </div>
+    </a>
+    <a href="/">
+        <div class="iconBtn">
+            <img src="https://i.imgur.com/8gsjOP7.png" class="icon" />
+        </div>
+    </a>
+    @if(user)
+    <a href="/logout">
+        <div class="iconBtn">
+            <img src="https://i.imgur.com/mAGLWiW.png" class="icon" />
+        </div>
+    </a>
+    @end
+</div>

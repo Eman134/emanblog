@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdonisJS - A fully featured web framework for Node.js</title>
+  @entryPointStyles('app')
+  @entryPointScripts('app')
+  @entryPointStyles('table')
+  @entryPointScripts('table')
+</head>
+<body>
+  @include('partials/header')
+  <div class="container">
+    <form method="POST" action="/posts/store">
+      <input type="hidden" name="_csrf" value="{{ csrfToken }}" >
+      <div class="row">
+        <div class="col-75">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" placeholder="Title">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-75">
+          <label for="image">Image</label>
+          <input type="text" id="image" name="image" placeholder="Url of image"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-75">
+          <label for="content">Content</label>
+          <textarea type="text" id="content" name="content" placeholder="Content" style="height:200px;width:400px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-75">
+          <label for="tag">Tag</label>
+          <select id="tag" name="tag">
+            <option value="tech">Tech</option>
+            <option value="food">Food</option>
+            <option value="automobile">Automobile</option>
+          </select>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <input class="button size1" type="submit" value="Submit">
+      </div>
+      @if(session && session.flashMessages && session.flashMessages.get('message'))
+    <div class="{{ session.flashMessages.get('message').includes("failed") ? "alertBox" : "successBox" }}">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      {{ session && session.flashMessages && session.flashMessages.get('message') ? session.flashMessages.get('message') : '' }}
+    </div>
+  @endif
+    </form>
+  </div>
+</body>
+</html>

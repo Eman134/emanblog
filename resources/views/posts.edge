@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdonisJS - A fully featured web framework for Node.js</title>
+  @entryPointStyles('app')
+  @entryPointScripts('app')
+</head>
+<body>
+  @include('partials/header')
+  <div class="container">
+
+    @each(post in posts)
+    <div class="card">
+      <div class="card__header">
+        <img onerror="this.onerror=null;this.src='https://cdn.discordapp.com/attachments/844745864101494814/960532104817553458/IMG_0586.jpg';" src="{{ post.image }}" alt="card__image" class="card__image" width="200">
+      </div>
+        <div class="card__body">
+          <span class="tag tag-blue">{{ post.tag }}</span>
+          <h4>{{ post.title }}</h4>
+          <p class="wrap">{{ post.content.substr(0, 100) }}...</p>
+        </div>
+        <div class="card__footer">
+          <div class="user">
+            <img src="{{ post.user_avatar }}" onerror="this.onerror=null;this.src='https://cdn.discordapp.com/attachments/844745864101494814/960532104817553458/IMG_0586.jpg';" alt="user__image" class="user__image">
+            <div class="user__info">
+              <h5>{{ post.user_name }}</h5>
+              <small>{{post.createdAt.diffNow().negate().toFormat('hh') }} hours ago.</small>
+            </div>
+            <div class="newpost" style="display: flex; justify-items: flex-end; align-items: flex-end;">
+              <a href="/post/{{ post.id }}">
+                  <button class="button size-1 info">View Post</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    @endeach
+    @if(posts.length == 0) 
+    <div class="card">
+      Create your first post!
+      <div class="newpost">
+        <a href="/posts/create">
+            <button class="button size1 success"><img src="https://i.imgur.com/T5sCX7s.png" class="icon" />New Post</button>
+        </a>
+      </div>
+    </div>
+    @endif
+
+  </div>
+</body>
+</html>

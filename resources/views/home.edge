@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdonisJS - A fully featured web framework for Node.js</title>
+  @entryPointStyles('app')
+  @entryPointScripts('app')
+</head>
+<body>
+  @include('partials/header')
+  <main style="display:block;">
+    <div>
+      <h1 class="title"> Hello! </h1>
+      <p class="subtitle">
+        Welcome {{ user ? user.nickName : 'to EmanBlog' }}.
+      </p>
+      
+      @if(user)
+      <div>
+        <a href="/posts">
+          <button class="button size1 white">
+            <img src="https://i.imgur.com/lWsDhWe.png" style="width: 25px;height: 25px;margin-right: 10px;" />
+            View Posts
+          </button>
+        </a>
+      </div>
+      @else
+      <a href="/login">
+        <button class="button size1">Login w/ Discord</button>
+      </a>
+      @end
+      
+    </div>
+  </main>
+</body>
+</html>

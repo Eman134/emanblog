@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdonisJS - A fully featured web framework for Node.js</title>
+  @entryPointStyles('app')
+  @entryPointScripts('app')
+  @entryPointStyles('table')
+  @entryPointScripts('table')
+</head>
+<body>
+  @include('partials/header')
+  <div>
+        <div class="newpost">
+            <a href="/posts/create">
+                <button class="button size1 success"><img src="https://i.imgur.com/T5sCX7s.png" class="icon" />New Post</button>
+            </a>
+        </div>
+        <div class="table-container">
+            <div class="table">
+                <div class="table-header">
+                    <div class="header__item"><a id="id" class="filter__link">Identify</a></div>
+                    <div class="header__item"><a id="name" class="filter__link">Title</a></div>
+                    <div class="header__item"><a id="wins" class="filter__link filter__link--number">Author</a></div>
+                    <div class="header__item"><a id="draws" class="filter__link filter__link--number">Status</a></div>
+                    <div class="header__item"><a id="losses" class="filter__link filter__link--number">Date</a></div>
+                    <div class="header__item"><a id="total" class="filter__link filter__link--number">Actions</a></div>
+                </div>
+                <div class="table-content">	
+                    @each(post in posts)
+                    <div class="table-row">		
+                        <div class="table-data">{{ post.id }}</div>
+                        <div class="table-data">{{ post.title }}</div>
+                        <div class="table-data">Eman134</div>
+                        <div class="table-data">{{ post.status ? 'Active' : 'Inactive'}}</div>
+                        <div class="table-data">{{ post.createdAt.toFormat("dd/MM/yyyy  HH:mm") }}</div>
+                        <div class="table-data">
+                            <div style="display: flex; justify-content: center;">
+                                <a href="#">
+                                    <div class="iconBtn">
+                                        <img src="https://i.imgur.com/uci6XOJ.png" class="icon2" />
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="iconBtn">
+                                        <img src="https://i.imgur.com/g42lGG6.png" class="icon2" />
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="iconBtn">
+                                        <img src="https://i.imgur.com/U7kX2la.png" class="icon2" />
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    @endeach
+
+                </div>	
+            </div>
+        </div>
+    </div>
+</body>
+</html>
